@@ -100,16 +100,16 @@ Ctrl+C to quit
 
 `);
 
-  /* const sudokuInput = [];
+  const sudokuInput = [];
   for (let i = 0; i < 9; i += 1) {
     // eslint-disable-next-line no-await-in-loop
     sudokuInput[i] = [...(
       await ask(`Line ${i + 1}|`)
     ).padEnd(9, ' ').replace(/[A-z]/g, ' ')]
       .map((v) => (v === ' ' ? null : +v));
-  } */
+  }
 
-  const sudokuInput = [
+  /* const sudokuInput = [
     '  4   51 ',
     '     98  ',
     '  783 6 4',
@@ -119,7 +119,7 @@ Ctrl+C to quit
     '    1 9  ',
     '42 7     ',
     '56   8 4 ',
-  ].map((v) => [...v.padEnd(9, ' ')].map((v1) => (v1 === ' ' ? null : +v1)));
+  ].map((v) => [...v.padEnd(9, ' ')].map((v1) => (v1 === ' ' ? null : +v1))); */
 
   const algoWithoutAskForSudoku = async (sudokuParamsAlgo) => {
     const getRegion = (y, x) => Math.floor(y / 3) * 3 + Math.floor(x / 3);
