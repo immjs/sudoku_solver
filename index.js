@@ -298,10 +298,10 @@ Ctrl+C to quit
     displaySudoku(sudoku.map(
       (row, y) => row.map(
         (cell, x) => [
-          String(cell).cyan,
+          String(cell),
           [
             String(cell).red,
-            String(cell),
+            String(cell).cyan,
           ][
             +![rows[x], cols[y], bulk[getRegion(y, x)]]
               .some((cat) => cat.filter((otherCell) => otherCell === cell).length > 1)
