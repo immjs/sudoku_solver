@@ -102,9 +102,8 @@ Ctrl+C to quit
 
   const sudokuInput = [];
   for (let i = 0; i < 9; i += 1) {
-    // eslint-disable-next-line no-await-in-loop
     sudokuInput[i] = [...(
-      await ask(`Line ${i + 1}|`)
+      await ask(`Line ${i + 1}|`) // eslint-disable-line no-await-in-loop
     ).padEnd(9, ' ').replace(/[A-z]/g, ' ')]
       .map((v) => (v === ' ' ? null : +v));
   }
