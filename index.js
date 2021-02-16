@@ -14,7 +14,7 @@ const Table = require('cli-table');
  *
 * */
 
-const charMap = [{
+/* const charMap = [{
   '┬': '╤',
   '┼': '╪',
   '┴': '╧',
@@ -34,7 +34,7 @@ const charMap = [{
   '┴': '╩',
   '┐': '╗',
   '┘': '╝',
-}];
+}]; */
 
 const displaySudoku = (sudokuParamsDisplay) => {
   const maxWidth = Math.max(
@@ -299,7 +299,7 @@ Ctrl+C to quit
     displaySudoku(sudoku.map(
       (row, y) => row.map(
         (cell, x) => [
-          String(cell).gray,
+          String(cell).cyan,
           [
             String(cell).red,
             String(cell),
