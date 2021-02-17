@@ -41,7 +41,7 @@ const displaySudoku = (sudokuParamsDisplay) => {
     ...sudokuParamsDisplay.map(
       (row) => Math.max(
         ...row.map(
-          (cell) => (Array.isArray(cell) ? cell.join('|') : String(cell.replace(RegExp('\x1b\\[[0-9][0-9]m', 'g'), ''))).length, // eslint-disable-line no-control-regex
+          (cell) => (Array.isArray(cell) ? cell.join('|') : String(cell).replace(RegExp('\x1b\\[[0-9][0-9]m', 'g'), '')).length, // eslint-disable-line no-control-regex
         ),
       ),
     ),
@@ -145,9 +145,9 @@ Ctrl+C to quit
       ));
       sudoku = sudoku.map(
         (row, y) => row.map(
-          (cell, x) => cell ?? freeBulk[getRegion(y, x)].filter(
+          (cell, x) => (cell === null && freeBulk[getRegion(y, x)].filter(
             (value) => freeX[y].includes(value) && freeY[x].includes(value),
-          ),
+          )) || cell,
         ),
       );
 
